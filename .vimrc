@@ -42,8 +42,6 @@ colorscheme codedark
 " Corrigir o delay ao mudar de modo
 set ttimeoutlen=25
 
-" NERDTree
-" Airline
 " Teclas de Atalho - CTRL
 map <C-T> :tabnext<CR> 
 nmap <c-s> :w<CR>
