@@ -12,8 +12,11 @@ Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "Plugin 'tpope/vim-surround'			" Quoting / parenthesizing
 Plugin 'scrooloose/nerdcommenter'		" Comments
 Plugin 'scrooloose/nerdtree'			" Tree file explorer
-Plugin 'gruvbox-community/gruvbox'
-Plugin 'sheerun/vim-polyglot' " Language pack (html, js, ts, jsx and much much more)
+Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'arcticicestudio/nord-vim'
+"Plugin 'sheerun/vim-polyglot' " Language pack (html, js, ts, jsx and much much more)
+Plugin 'pangloss/vim-javascript'
+Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'styled-components/vim-styled-components'
 Plugin 'mbbill/undotree'
 
@@ -21,14 +24,19 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Theme and syntax
-"syntax on
+syntax on
 set term=xterm-256color
 set background=dark
-let g:gruvbox_contrast_dark = 'hard'
+"let g:gruvbox_contrast_dark = 'hard'
 set t_Co=256
 set t_ut=
-colorscheme gruvbox
-syntax enable
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+let g:dracula_italic = 0
+colorscheme nord
+"colorscheme codedark
+"syntax enable
 
 " Corrigir o delay ao mudar de modo
 "set ttimeoutlen=25
@@ -86,7 +94,7 @@ let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 let no_buffers_menu=1
 
 " vim-airline
-let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'nord'
 "let g:airline_theme = 'one'
 "let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
